@@ -1,9 +1,7 @@
 import React from 'react';
-import './Header.css';
 import { useState } from "react";
 import CompanyTitle from '../CompanyTitle/CompanyTitle';
 import { signOut } from 'firebase/auth';
-
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -41,6 +39,9 @@ const Header = () => {
         return <Loading></Loading>
     }
 
+    if (user) {
+        console.log(user);
+    }
     return (
 
         <div className="2xl:container 2xl:mx-auto">
@@ -64,11 +65,18 @@ const Header = () => {
                             {
                                 user
                                     ?
-                                    <Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link>
+                                    <>
+                                        <Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link>
+                                        
+                                    </>
                                     :
                                     <Link to="/login">Login</Link>
                             }
                         </li>
+                        {
+                            user && <p className='ms-auto'>{user.displayName}{user.name}</p>
+                        }
+
                     </ul>
                 </nav>
 

@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2>This is Home Page</h2>
+            <h2>Reliable Tools Manufacturer Since 1995</h2>
         </div>
     );
 };
