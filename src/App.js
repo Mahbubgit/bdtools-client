@@ -10,6 +10,8 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Tools from './Pages/Tools/Tools';
 import Reviews from './Pages/Reviews/Reviews';
 import BusinessSummary from './Pages/BusinessSummary/BusinessSummary';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );

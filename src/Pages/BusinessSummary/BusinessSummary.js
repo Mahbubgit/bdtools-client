@@ -1,9 +1,10 @@
 import React from 'react';
+import business_info from '../../Images/trust.png';
 
 const BusinessSummary = () => {
     return (
         <div>
-            <h2>This is Business Summary Page</h2>
+            <img src={business_info} alt=""/>
         </div>
     );
 };
