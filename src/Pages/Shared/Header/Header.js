@@ -1,32 +1,12 @@
 import React from 'react';
-import { useState } from "react";
 import CompanyTitle from '../CompanyTitle/CompanyTitle';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
-
+import profileImg from '../../../Images/profile-image.jpg';
 const Header = () => {
-
-    let arr = [true, false, false, false, false, false]
-    const [style, setStyle] = useState(arr);
-    const [dropDown, setDropDown] = useState(true);
-    const [text, setText] = useState("");
-
-    const selected = (props) => {
-        let newArr = [...arr];
-        for (let i = 0; i < newArr.length; i++) {
-            newArr[i] = false;
-        }
-        newArr[props] = true;
-        setStyle(newArr);
-    }
-
-    const setSelectedText = (txt) => {
-        setText(txt);
-        setDropDown(true);
-    }
 
     const [user, loading] = useAuthState(auth);
 
@@ -42,82 +22,99 @@ const Header = () => {
     if (user) {
         console.log(user);
     }
+
+    const menuItems = <>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/tools">Tools</Link></li>
+        <li><Link to="/business-summary">Business Summary</Link></li>
+        <li><Link to="/reviews">Reviews</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
+
+        {
+            user && <li><Link to="/dashboard">Dashboard</Link></li>
+        }
+        <li>
+            {
+                user
+                    ?
+                    <>
+                        <Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link>
+                    </>
+                    :
+                    <Link className='text-green-600 font-bold' to="/login">Login</Link>
+            }
+        </li>
+    </>
+
+    const menuHiddenItems = <>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/tools">Tools</Link></li>
+        <li><Link to="/business-summary">Business Summary</Link></li>
+        <li><Link to="/reviews">Reviews</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
+        {
+            user && <li><Link to="/dashboard">Dashboard</Link></li>
+        }
+        <li>
+            {
+                user
+                    ?
+                    <Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link>
+                    :
+                    <Link className='text-green-600 font-bold' to="/login">Login</Link>
+            }
+        </li>
+    </>
+
+    const profileMenuItems = <>
+        {
+            user && <p className='ms-auto'>{user.displayName}{user.name}</p>
+        }
+        <li>
+            <Link className="justify-between" to="/dashboard">Profile <span className="badge">New</span></Link>
+        </li>
+        <li><Link to="/dashboard/settings">Settings</Link></li>
+        <li><Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link></li>
+    </>
+
     return (
-
-        <div className="2xl:container 2xl:mx-auto">
-            <div className="bg-white rounded shadow-lg py-2 px-7">
-                <nav className="flex justify-between">
-                    <div className="flex items-center space-x-3 lg:pr-16 pr-6">
-                        <CompanyTitle></CompanyTitle>
-                    </div>
-
-                    {/* For medium and plus sized devices */}
-
-                    <ul className="hidden md:flex flex-auto space-x-2">
-                        <li onClick={() => selected(0)} className={`${style[0] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/">Home</Link></li>
-                        <li onClick={() => selected(1)} className={`${style[1] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/tools">Tools</Link></li>
-                        <li onClick={() => selected(2)} className={`${style[2] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/business-summary">Business Summary</Link></li>
-                        <li onClick={() => selected(3)} className={`${style[3] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/reviews">Reviews</Link></li>
-                        <li onClick={() => selected(4)} className={`${style[4] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/blogs">Blogs</Link></li>
-                        {
-                            user && <li onClick={() => selected(5)} className={`${style[5] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}><Link to="/dashboard">Dashboard</Link></li>
-                        }
-                        <li onClick={() => selected(6)} className={`${style[6] ? 'text-white bg-indigo-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>
-                            {
-                                user
-                                    ?
-                                    <>
-                                        <Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link>
-
-                                    </>
-                                    :
-                                    <Link to="/login">Login</Link>
-                            }
-                        </li>
-                        {
-                            user && <p className='ms-auto'>{user.displayName}{user.name}</p>
-                        }
-
+        <div className="navbar bg-base-100">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        {menuHiddenItems}
                     </ul>
-                </nav>
-
-                {/* for smaller devices */}
-
-                <div className="block md:hidden w-full mt-5 ">
-                    <div onClick={() => setDropDown(!dropDown)} className="cursor-pointer px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full">
-                        <div className="flex space-x-2">
-                            <span id="s1" className={`${text.length !== 0 ? '' : 'hidden'} font-semibold text-sm leading-3`}>Selected: </span><p id="textClicked" className="font-normal text-sm leading-3 focus:outline-none hover:bg-gray-800 duration-100 cursor-pointer ">{text ? text : "Home"}</p>
-                        </div>
-                        <svg id="ArrowSVG" className={`${dropDown ? '' : 'rotate-180'} transform duration-100`} width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                    <div className=" relative">
-                        <ul id="list" className={`${dropDown ? 'hidden' : 'block'} font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}>
-                            <li onClick={() => setSelectedText("Home")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/">Home</Link></li>
-                            <li onClick={() => setSelectedText("Tools")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/tools">Tools</Link></li>
-                            <li onClick={() => setSelectedText("Business Summary")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/business-summary">Business Summary</Link></li>
-                            <li onClick={() => setSelectedText("Reviews")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/reviews">Reviews</Link></li>
-                            <li onClick={() => setSelectedText("Blogs")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/blogs">Blogs</Link></li>
-                            {
-                                user && <li onClick={() => setSelectedText("Dashboard")} className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"><Link to="/dashboard">Dashboard</Link></li>
-                            }
-                            <li className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal">
-                                {
-                                    user
-                                        ?
-                                        <Link className='text-red-600 font-bold' onClick={() => setSelectedText("Logout")} to="/login">Sign Out</Link>
-                                        :
-                                        <Link className='text-green-600 font-bold' onClick={() => setSelectedText("Login")} to="/login">Login</Link>
-                                }
-                            </li>
-                            {
-                                user && <p className='ms-auto'>{user.displayName}{user.name}</p>
-                            }
-                        </ul>
-                    </div>
                 </div>
+                <Link to="/home" className="btn btn-ghost normal-case text-xl"><CompanyTitle></CompanyTitle></Link>
             </div>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal p-0">
+                    {menuItems}
+                </ul>
+            </div>
+            <div className="navbar-end">
+                <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+            </div>
+
+            {
+                user &&
+                <div className="dropdown dropdown-end">
+                    <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={profileImg} alt='' />
+                        </div>
+                    </label>
+
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        {profileMenuItems}
+                    </ul>
+                </div>
+            }
         </div>
     );
 };

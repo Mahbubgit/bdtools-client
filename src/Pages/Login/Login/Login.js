@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import CompanyTitle from '../../Shared/CompanyTitle/CompanyTitle';
 import googleImg from '../../../Images/social/google.png';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 // import useToken from '../../hooks/useToken';
 
 const Login = () => {
@@ -19,7 +19,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    // const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     // const [token] = useToken(user || gUser);
 
@@ -40,6 +40,7 @@ const Login = () => {
         navigate('/');
         // navigate(from, { replace: true });
     }
+    
     if (error || gError) {
         signInError = <p className='text-center text-red-500'>{error?.message || gError?.message}</p>
     }
@@ -54,12 +55,12 @@ const Login = () => {
     };
 
     const resetPassword = async (event) => {
-        // const userEmail = register.email;
-        // console.log(userEmail);
-        // if (userEmail) {
-        //     await sendPasswordResetEmail(userEmail);
-        //     toast('Sent email for reset password');
-        // }
+        const userEmail = register.email;
+        console.log(userEmail);
+        if (userEmail) {
+            await sendPasswordResetEmail(userEmail);
+            toast('Sent email for reset password');
+        }
         // else {
         //     toast('Please enter your email address');
         // }
