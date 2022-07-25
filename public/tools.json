@@ -1,0 +1,326 @@
+[
+    {
+        "_id": 1,
+        "name": "Hammer",
+        "img": "https://i.ibb.co/k94xcxb/hammer1.png",
+        "description": "A hand tool consisting of a solid head set crosswise on a handle and used for pounding",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 50000,
+        "price": "50"
+    },
+    {
+        "_id": 2,
+        "name": "Hammer",
+        "img": "https://i.ibb.co/YP4051k/hammer2.png",
+        "description": "A hand tool consisting of a solid head set crosswise on a handle and used for pounding",
+        "minimumOrderQuantity": 1200,
+        "availableQuantity": 20000,
+        "price": "55"
+    },
+    {
+        "_id": 3,
+        "name": "Hammer",
+        "img": "https://i.ibb.co/zGRYsYS/hammer3.png",
+        "description": "A hand tool consisting of a solid head set crosswise on a handle and used for pounding",
+        "minimumOrderQuantity": 1500,
+        "availableQuantity": 65000,
+        "price": "60"
+    },
+    {
+        "_id": 4,
+        "name": "Chisel",
+        "img": "https://i.ibb.co/S52tbDF/chisel1.png",
+        "description": "A chisel is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 25000,
+        "price": "150"
+    },
+    {
+        "_id": 5,
+        "name": "Chisel",
+        "img": "https://i.ibb.co/8P3NyPG/chisel2.png",
+        "description": "A chisel is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 30000,
+        "price": "160"
+    },
+    {
+        "_id": 6,
+        "name": "Chisel",
+        "img": "https://i.ibb.co/R3cSDyh/chisel3.png",
+        "description": "A chisel is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 35000,
+        "price": "175"
+    },
+    {
+        "_id": 7,
+        "name": "Chisel",
+        "img": "https://i.ibb.co/TTkxCMM/chisel4.png",
+        "description": "A chisel is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 55000,
+        "price": "180"
+    },
+    {
+        "_id": 8,
+        "name": "Drill-machine",
+        "img": "https://i.ibb.co/tm83Rbr/drill-machine1.png",
+        "description": "Drill machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 15000,
+        "price": "3500"
+    },
+    {
+        "_id": 9,
+        "name": "Drill-machine",
+        "img": "https://i.ibb.co/dKnRgWV/drill-machine2.png",
+        "description": "Drill machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 22000,
+        "price": "3950"
+    },
+    {
+        "_id": 10,
+        "name": "Drill-machine",
+        "img": "https://i.ibb.co/1bKLYfK/drill-machine3.png",
+        "description": "Drill machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 15000,
+        "price": "3500"
+    },
+    {
+        "_id": 11,
+        "name": "Drill-machine",
+        "img": "https://i.ibb.co/HHZKrHV/drill-machine4.png",
+        "description": "Drill machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 35000,
+        "price": "4000"
+    },
+    {
+        "_id": 12,
+        "name": "Electric-saw",
+        "img": "https://i.ibb.co/FDH6SVb/electric-saw1.png",
+        "description": "Electric-saw machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 35000,
+        "price": "8500"
+    },
+    {
+        "_id": 13,
+        "name": "Electric-saw",
+        "img": "https://i.ibb.co/NmwYycB/electric-saw2.png",
+        "description": "Electric-saw machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 25000,
+        "price": "8000"
+    },
+    {
+        "_id": 14,
+        "name": "Electric-saw",
+        "img": "https://i.ibb.co/NT66wY7/electric-saw3.png",
+        "description": "Electric-saw machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 45000,
+        "price": "7500"
+    },
+    {
+        "_id": 15,
+        "name": "Electric-saw",
+        "img": "https://i.ibb.co/Rb5VS3c/electric-saw4.png",
+        "description": "Electric-saw machine is an electrical hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 52000,
+        "price": "7700"
+    },
+    {
+        "_id": 16,
+        "name": "Measuring-tape",
+        "img": "https://i.ibb.co/wJd3jw9/measuring-tape1.png",
+        "description": "Measuring-tape is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 55000,
+        "price": "700"
+    },
+    {
+        "_id": 17,
+        "name": "Measuring-tape",
+        "img": "https://i.ibb.co/khBHbMt/measuring-tape2.png",
+        "description": "Measuring-tape is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 50000,
+        "price": "750"
+    },
+    {
+        "_id": 18,
+        "name": "Measuring-tape",
+        "img": "https://i.ibb.co/T8XspGq/measuring-tape3.png",
+        "description": "Measuring-tape is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 75000,
+        "price": "720"
+    },
+    {
+        "_id": 19,
+        "name": "Measuring-tape",
+        "img": "https://i.ibb.co/Rjg9Lv1/measuring-tape4.png",
+        "description": "Measuring-tape is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 65000,
+        "price": "800"
+    },
+    {
+        "_id": 20,
+        "name": "Pliers",
+        "img": "https://i.ibb.co/GJG2vyr/pliers1.png",
+        "description": "Pliers is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 65000,
+        "price": "650"
+    },
+    {
+        "_id": 21,
+        "name": "Pliers",
+        "img": "https://i.ibb.co/kg9hqD6/pliers2.png",
+        "description": "Pliers is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 45000,
+        "price": "680"
+    },
+    {
+        "_id": 22,
+        "name": "Pliers",
+        "img": "https://i.ibb.co/F75ntqq/pliers3.png",
+        "description": "Pliers is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 35000,
+        "price": "750"
+    },
+    {
+        "_id": 23,
+        "name": "Pliers",
+        "img": "https://i.ibb.co/1bt3W4n/pliers4.png",
+        "description": "Pliers is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 75000,
+        "price": "650"
+    },
+    {
+        "_id": 24,
+        "name": "Pliers",
+        "img": "https://i.ibb.co/NCrD2zp/pliers5.png",
+        "description": "Pliers is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 65000,
+        "price": "550"
+    },
+    {
+        "_id": 25,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/D7M4qFr/screwdriver1.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 65000,
+        "price": "250"
+    },
+    {
+        "_id": 26,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/JKZrdWK/screwdriver2.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 75000,
+        "price": "300"
+    },
+    {
+        "_id": 27,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/XkZgTTC/screwdriver3.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 54000,
+        "price": "340"
+    },
+    {
+        "_id": 28,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/GkDvtFj/screwdriver4.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 56000,
+        "price": "290"
+    },
+    {
+        "_id": 29,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/8BTGZb3/screwdriver5.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 70000,
+        "price": "350"
+    },
+    {
+        "_id": 30,
+        "name": "Screwdriver",
+        "img": "https://i.ibb.co/jbwrnVX/screwdriver6.png",
+        "description": "Screwdriver is a hand tool",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 57000,
+        "price": "340"
+    },
+    {
+        "_id": 31,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/GxjnDyZ/wrench1.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 50000,
+        "price": "950"
+    },
+    {
+        "_id": 32,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/wpH6hpd/wrench2.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 53000,
+        "price": "1020"
+    },
+    {
+        "_id": 33,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/1vsTJ2R/wrench3.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 42000,
+        "price": "1000"
+    },
+    {
+        "_id": 34,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/Fw84VfG/wrench4.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 65000,
+        "price": "1100"
+    },
+    {
+        "_id": 35,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/8rBgF4K/wrench5.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 62000,
+        "price": "990"
+    },
+    {
+        "_id": 36,
+        "name": "Wrench",
+        "img": "https://i.ibb.co/QHVnSjb/wrench6.png",
+        "description": "Wrench is a hand tool",
+        "minimumOrderQuantity": 500,
+        "availableQuantity": 75000,
+        "price": "1120"
+    }
+]

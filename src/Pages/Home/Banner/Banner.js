@@ -11,29 +11,29 @@ import banner8 from './../../../Images/banner/8.png';
 const Banner = () => {
     return (
         <div>
-            <div class="carousel rounded-box">
-                <div class="carousel-item">
+            <div className="carousel rounded-box">
+                <div className="carousel-item">
                     <img src={banner1} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner2} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner3} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner4} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner5} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner6} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner7} alt="" />
                 </div>
-                <div class="carousel-item">
+                <div className="carousel-item">
                     <img src={banner8} alt="" />
                 </div>
             </div>
