@@ -37,8 +37,8 @@ const Login = () => {
     // }, [token, from, navigate]);
 
     if (user || gUser) {
-        navigate('/');
-        // navigate(from, { replace: true });
+        // navigate('/');
+        navigate(from, { replace: true });
     }
     
     if (error || gError) {

@@ -23,7 +23,7 @@ const BusinessSummary = () => {
 
     return (
         <div>
-            <div className='my-2'>
+            <div className='my-16'>
                 <div className='text-center'>
                     <h3 className='text-primary font-bold text-4xl'>Business Summary</h3>
                 </div>
