@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
@@ -45,7 +45,7 @@ const Login = () => {
         signInError = <p className='text-center text-red-500'>{error?.message || gError?.message}</p>
     }
 
-    if (loading || gLoading) {
+    if (loading || gLoading || sending) {
         return <Loading></Loading>
     }
 
@@ -56,7 +56,7 @@ const Login = () => {
 
     const resetPassword = async (event) => {
         const userEmail = register.email;
-        console.log(userEmail);
+        // console.log(userEmail);
         if (userEmail) {
             await sendPasswordResetEmail(userEmail);
             toast('Sent email for reset password');

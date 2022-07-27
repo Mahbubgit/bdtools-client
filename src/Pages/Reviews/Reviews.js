@@ -1,36 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Review from './Review';
-import client1 from '../../Images/clients/client1.png';
-import client2 from '../../Images/clients/client2.png';
-import client3 from '../../Images/clients/client3.png';
 
 const Reviews = () => {
-    const reviews = [
-        {
-            _id: 1,
-            name: 'Ninja',
-            review: 'We are very happy to get such a wonderful vendor!',
-            location: 'Canada',
-            post: 'March 2022',
-            img: client1
-        },
-        {
-            _id: 2,
-            name: 'Mr. Tom',
-            review: 'We are very lucky to find you, a reliable tools manufacturer.',
-            location: 'Sweden',
-            post: 'February 2022',
-            img: client2
-        },
-        {
-            _id: 3,
-            name: 'Mr. Alex',
-            review: 'Reliable and great service! We will again select you in future.',
-            location: 'California',
-            post: 'January 2022',
-            img: client3
-        },
-    ]
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data));
+    }, [])
 
     return (
         <div>

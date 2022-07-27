@@ -19,9 +19,9 @@ const Header = () => {
         return <Loading></Loading>
     }
 
-    if (user) {
-        console.log(user);
-    }
+    // if (user) {
+    //     console.log(user);
+    // }
 
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
