@@ -4,43 +4,32 @@ import { Link } from 'react-router-dom';
 import copyright from './../../../Images/copyright.png';
 
 const Footer = () => {
-    let arr = [true, false, false, false, false, false]
-    const [style, setStyle] = useState(arr);
+    
     const today = new Date();
     const year = today.getFullYear();
-
-    const selected = (props) => {
-        let newArr = [...arr];
-        for (let i = 0; i < newArr.length; i++) {
-            newArr[i] = false;
-        }
-        newArr[props] = true;
-        setStyle(newArr);
-    }
-
 
     return (
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <span className="footer-title">Services</span>
-                    <Link onClick={() => selected(0)} to="/">Home</Link>
-                    <Link onClick={() => selected(1)} to="/tools">Tools</Link>
-                    <Link onClick={() => selected(2)} to="/business-summary">Business Summary</Link>
-                    <Link onClick={() => selected(3)} to="/reviews">Reviews</Link>
+                    <Link to="/tools">Tools</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/business-summary">Business Summary</Link>
+                    <Link to="/reviews">Reviews</Link>
 
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
-                    <Link onClick={() => selected(4)} to="/contact">Contact</Link>
-                    <Link onClick={() => selected(5)} to="/about">About</Link>
-                    <Link onClick={() => selected(6)} to="/jobs">Jobs</Link>
+                    <Link to="/contact">Contact</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/jobs">Jobs</Link>
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
-                    <Link onClick={() => selected(7)} to="/terms">Terms of use</Link>
-                    <Link onClick={() => selected(8)} to="/privacy">Privacy policy</Link>
-                    <Link onClick={() => selected(9)} to="/cookie">Cookie policy</Link>
+                    <Link to="/terms">Terms of use</Link>
+                    <Link to="/privacy">Privacy policy</Link>
+                    <Link to="/cookie">Cookie policy</Link>
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">

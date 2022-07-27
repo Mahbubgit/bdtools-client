@@ -35,7 +35,7 @@ const Reviews = () => {
     return (
         <div>
             <section className='my-16'>
-                <h2 className='text-4xl text-primary text-center'>Our Valuable Clients Comment</h2>
+                <h2 className='text-5xl font-bold text-primary text-center'>Our Valuable Clients Say</h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                     {
                         reviews.map(review => <Review

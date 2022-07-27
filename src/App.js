@@ -27,6 +27,7 @@ import Settings from './Pages/Dashboard/Settings';
 import MyPortfolio from './Pages/Dashboard/MyPortfolio';
 import Payment from './Pages/Dashboard/Payment';
 import Purchase from './Pages/Purchase/Purchase';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
+
         <Route path='/tool/:toolId' element={
           <RequireAuth>
             <Purchase></Purchase>

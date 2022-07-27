@@ -25,9 +25,9 @@ const BusinessSummary = () => {
         <div>
             <div className='my-16'>
                 <div className='text-center'>
-                    <h3 className='text-primary font-bold text-4xl'>Business Summary</h3>
+                    <h3 className='text-primary font-bold text-5xl'>Business Summary</h3>
                 </div>
-                <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+                <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-6'>
                     {
                         services.map(service => <Service
                             key={service._id}

@@ -18,7 +18,7 @@ const Tools = () => {
 
         <div className='my-16'>
             <div className='text-center'>
-                <h3 className='text-primary font-bold text-4xl'>Tools - We Provide Worldwide</h3>
+                <h3 className='text-primary font-bold text-5xl'>Tools - We Provide Worldwide</h3>
             </div>
 
             <Tabs

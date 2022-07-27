@@ -5,7 +5,6 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import googleImg from '../../../Images/social/google.png';
-
 // import useToken from '../../hooks/useToken';
 
 const Register = () => {
@@ -17,7 +16,16 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    // --For email verification--
+    // const [
+    //     createUserWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error,
+    // ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
@@ -37,9 +45,9 @@ const Register = () => {
     //     // console.log(user || gUser);
     //     navigate('/');
     // }
+    
     if (user || gUser) {
         navigate('/');
-        // navigate(from, { replace: true });
     }
     const onSubmit = async data => {
         if (data.password === data.confirmPassword) {

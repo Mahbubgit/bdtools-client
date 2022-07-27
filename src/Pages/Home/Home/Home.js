@@ -1,5 +1,8 @@
 import React from 'react';
 import BusinessSummary from '../../BusinessSummary/BusinessSummary';
+import Contact from '../../Contact/Contact';
+import CustomerFeedback from '../../CustomerFeedback/CustomerFeedback';
+import NewTools from '../../NewTools/NewTools';
 import Reviews from '../../Reviews/Reviews';
 import Tools from '../../Tools/Tools';
 import Banner from '../Banner/Banner';
@@ -12,6 +15,9 @@ const Home = () => {
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
             <Reviews></Reviews>
+            <NewTools></NewTools>
+            <CustomerFeedback></CustomerFeedback>
+            <Contact></Contact>
         </div>
     );
 };
