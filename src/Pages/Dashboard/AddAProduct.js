@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-// import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
-// import Loading from '../Shared/Loading/Loading';
 
 const AddAProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    // const { data: toolsType, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/toolsType').then(res => res.json()));
+    const [toolsType, setToolsType] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/toolsType', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                setToolsType(data)
+            });
+    }, []);
+
+
     const imageStorageKey = '8be01473d7fc1567a492620a31b4d0fc';
 
     const onSubmit = async data => {
-        // console.log('data', data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -26,7 +40,6 @@ const AddAProduct = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const tools = {
-                        // name, img, description, minimumOrderQuantity, availableQuantity, price 
                         name: data.name,
                         description: data.description,
                         minimumOrderQuantity: data.minimumOrderQuantity,
@@ -45,7 +58,6 @@ const AddAProduct = () => {
                     })
                         .then(res => res.json())
                         .then(inserted => {
-                            // console.log('product', inserted);
                             if (inserted.insertedId) {
                                 toast.success('Product added successfully');
                                 reset();
@@ -55,37 +67,26 @@ const AddAProduct = () => {
                             }
                         })
                 }
-                // console.log('imgbb', result);
             })
     };
 
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
     return (
         <div>
-            <h2 className='text-4xl text-primary font-bold'> Add a New Product/Tool</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="form-control mx-auto w-full max-w-xs mt-4">
-                    {/* <label className="label">
-                        <span className="label-text">Name</span>
-                    </label> */}
-                    <input
-                        type="text"
+                <div className="form-control mx-auto w-full max-w-xs my-5">
+                    <select
+                        {...register('name')}
+                        className="select input-bordered w-full max-w-xs"
                         placeholder="Tool Name"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
-                            required: {
-                                value: true,
-                                message: 'Name is Required'
-                            }
+                    >
+                        {
+                            toolsType.map(toolType => <option
+                                key={toolType._id}
+                                value={toolType.name}
+                            >{toolType.name}</option>)
                         }
-                        )}
-                    />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-600">{errors.name.message}</span>}
-                    </label>
+                    </select>
                 </div>
 
                 <div className="form-control mx-auto w-full max-w-xs">
@@ -160,28 +161,12 @@ const AddAProduct = () => {
                     </label>
                 </div>
 
-                {/* <div className="form-control mx-auto w-full max-w-xs">
-                    <select
-                        {...register('toolsType')}
-                        className="select input-bordered w-full max-w-xs"
-                        placeholder="Tool Type"
-                    >
-
-                        {
-                            toolsType.map(type => <option
-                                key={type._id}
-                                value={type.name}
-                            >{type.name}</option>)
-                        }
-                    </select>
-                </div> */}
-
-                <div className="form-control mx-auto w-full max-w-xs">
+                <div className="form-control mx-auto w-full max-w-xs mt-5">
                     <input
                         type="file"
                         placeholder="Tool Image"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("img", {
+                        {...register("image", {
                             required: {
                                 value: true,
                                 message: 'image is Required'
@@ -194,7 +179,7 @@ const AddAProduct = () => {
                     </label>
                 </div>
 
-                <input className='btn w-full max-w-xs' type="submit" value="Add" />
+                <input className='btn w-full max-w-xs mb-4' type="submit" value="Add Product" />
             </form>
         </div>
     );

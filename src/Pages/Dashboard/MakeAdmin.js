@@ -1,41 +1,43 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading/Loading';
+import React, { useEffect, useState } from 'react';
 import UserData from './UserData';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
-        method: 'GET',
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-    })
-    .then(res => res.json()));
+    const [users, setUsers] = useState([]);
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    useEffect(() => {
+        fetch('http://localhost:5000/user', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                setUsers(data)
+            });
+    }, []);
 
     return (
         <div>
-            <h2 className="text-4xl text-primary font-bold">All users: {users.length}</h2>
-            <div className="overflow-x-auto">
+            {/* <h2 className="text-4xl text-primary font-bold">Make Admin</h2> */}
+            <div className="overflow-x-auto my-5">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th>Sl No</th>
                             <th>Email</th>
-                            <th>Add Role</th>
-                            <th>Remove User</th>
+                            <th>Add Admin Role</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((user,index) => <UserData
+                            users.map((user, index) => <UserData
                                 key={user._id}
                                 index={index}
                                 user={user}
-                                refetch={refetch}
+                                setUsers={setUsers}
                             ></UserData>)
                         }
                     </tbody>

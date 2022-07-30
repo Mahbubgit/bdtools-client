@@ -5,7 +5,7 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import googleImg from '../../../Images/social/google.png';
-// import useToken from '../../hooks/useToken';
+import useToken from '../../../hooks/useToken';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -29,7 +29,7 @@ const Register = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const navigate = useNavigate();
 
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
     let signUpError = '';
     let confirmPasswordError = '';
@@ -41,19 +41,15 @@ const Register = () => {
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-    // if (token) {
-    //     // console.log(user || gUser);
-    //     navigate('/');
-    // }
-    
-    if (user || gUser) {
+    if (token) {
         navigate('/');
     }
+    
     const onSubmit = async data => {
         if (data.password === data.confirmPassword) {
             await createUserWithEmailAndPassword(data.email, data.password);
             await updateProfile({ displayName: data.name });
-            // console.log('Update Done', data);
+            console.log('Update Done', data);
         }
         else {
             signUpError = <p className='text-center text-red-500'>Confirm password must be same as password</p>

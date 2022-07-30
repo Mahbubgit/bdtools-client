@@ -50,7 +50,7 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h2 className='text-4xl text-primary font-bold'>My Profile</h2>
+            {/* <h2 className='text-4xl text-primary font-bold'>My Profile</h2> */}
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-control mx-auto w-full max-w-xs">
