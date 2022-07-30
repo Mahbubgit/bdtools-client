@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import CompanyTitle from '../../Shared/CompanyTitle/CompanyTitle';
 import googleImg from '../../../Images/social/google.png';
 import { toast } from 'react-toastify';
-// import useToken from '../../hooks/useToken';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,7 +20,7 @@ const Login = () => {
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
     let signInError;
     const navigate = useNavigate();
@@ -29,18 +28,12 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    // useEffect(() => {
-    //     if (token) {
-    //         // console.log(user || gUser);
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token, from, navigate]);
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate]);
 
-    if (user || gUser) {
-        // navigate('/');
-        navigate(from, { replace: true });
-    }
-    
     if (error || gError) {
         signInError = <p className='text-center text-red-500'>{error?.message || gError?.message}</p>
     }
@@ -50,7 +43,6 @@ const Login = () => {
     }
 
     const onSubmit = data => {
-        // console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
     };
 

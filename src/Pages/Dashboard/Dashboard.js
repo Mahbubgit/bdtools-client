@@ -11,20 +11,27 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content text-center">
-                <h2 className='text-2xl font-bold text-blue-500'>Welcome to Dashboard</h2>
+                <h2 className='text-4xl font-bold text-blue-500'>Welcome to your Dashboard</h2>
                 <Outlet></Outlet>
 
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-                    
+
                     <li><Link to={'/dashboard'}>My Profile</Link></li>
                     <li><Link to={'/dashboard/myPortfolio'}>My Portfolio</Link></li>
                     {
                         !admin && <>
                             <li><Link to={'/dashboard/myOrders'}>My Orders</Link></li>
                             <li><Link to={'/dashboard/addAReview'}>Add A Review</Link></li>
+                            
+                            {/* For Test  */}
+                            <li><Link to={'/dashboard/allUsers'}>All Users</Link></li>
+                            <li><Link to={'/dashboard/manageAllOrders'}>All Orders</Link></li>
+                            <li><Link to={'/dashboard/addAProduct'}>Add A Product</Link></li>
+                            <li><Link to={'/dashboard/makeAdmin'}>Make Admin</Link></li>
+                            <li><Link to={'/dashboard/manageProducts'}>Manage Products</Link></li>
                         </>
                     }
 
