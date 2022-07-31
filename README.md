@@ -1,7 +1,7 @@
 # BDTOOLS-World's Famous Tools Manufacturer
 
 ### Project Link
- [BDTOOLS - a reliable tools manufacturer since 1995](https://)
+ [BDTOOLS - a reliable tools manufacturer since 1995](https://bdtools-8103c.web.app)
 
 ## Description
 
@@ -12,7 +12,7 @@ Welcome to BDTOOLS, one of the famous tools manufacturer in the world! This is a
         Header menu contains Home, Tools, Business Summary, Reviews, Blogs and Login menu.
     </li>
     <li>
-        After successful login, you can view 3 more header menu. These are: Dashboard, Sign Out and profileMenuItems where includes logged in user name, Profile, Settings and Sign Out.
+        After successful login, you can view 3 more header menu. These are: Dashboard, Sign Out and Profile Image where includes logged in user name, Profile, Settings and Sign Out.
     </li>
     <li>
         Home page displays beautiful dynamic sections such as Banner, Tools, Business Summary, Reviews, New produced Tools, Customer Feedback, Contact and Footer.
@@ -24,7 +24,7 @@ Welcome to BDTOOLS, one of the famous tools manufacturer in the world! This is a
         Blogs page contains 5 questions and their answers.
     </li>
     <li>
-        If a logged in user click on Dashboard, he/she will see My Orders, Add A Review, My Profile and My Portfolio options on the side nav.
+        If a logged in user click on Dashboard, he/she(not Admin user) will see My Orders, Add A Review, My Profile and My Portfolio options on the side nav.
     </li>
     <li>
         On My Orders page, the logged-in user will see only their orders. User can cancel any order that is not paid or payment by a credit card.
@@ -36,7 +36,7 @@ Welcome to BDTOOLS, one of the famous tools manufacturer in the world! This is a
         On My Profile page, user can be add their personal information like education, location, phone and linkedIn profile link.
     </li>
     <li>
-        Admin user can be see My Profile, Manage All Orders, Add A Product, Make Admin and Manage Products link. He/She performs all tasks on the particular page.
+        Admin user can be see on Dashboard side bar My Profile, My Portfolio, All Users, Manage Orders, Add A Product, Make Admin and Manage Products link. He/She performs all tasks on the particular page.
     </li>
     <li>
         User can also login by social login features like google login to access to the website.

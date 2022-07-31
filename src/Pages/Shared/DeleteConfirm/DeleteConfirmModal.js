@@ -29,7 +29,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, setOrders, orders }) 
             <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-red-500">Are you sure to delete {orderItem}?</h3>
+                    <h3 className="font-bold text-lg text-red-500">Are you sure to delete order of {orderItem}?</h3>
                     <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error text-white'>Delete</button>
                         <label for="delete-confirm-modal" className="btn btn-xs">Cancel</label>
