@@ -38,7 +38,7 @@ const AddAReview = () => {
                         img: img
                     }
                     // send to your database
-                    fetch('http://localhost:5000/review', {
+                    fetch('https://calm-lake-97858.herokuapp.com/review', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

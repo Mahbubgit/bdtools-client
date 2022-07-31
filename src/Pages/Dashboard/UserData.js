@@ -5,7 +5,7 @@ const UserData = ({ user, setUsers, index }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://calm-lake-97858.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

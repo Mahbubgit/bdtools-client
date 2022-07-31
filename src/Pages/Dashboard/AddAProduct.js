@@ -8,7 +8,7 @@ const AddAProduct = () => {
     const [toolsType, setToolsType] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toolsType', {
+        fetch('https://calm-lake-97858.herokuapp.com/toolsType', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const AddAProduct = () => {
                         img: img
                     }
                     // send to your database
-                    fetch('http://localhost:5000/tool', {
+                    fetch('https://calm-lake-97858.herokuapp.com/tool', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

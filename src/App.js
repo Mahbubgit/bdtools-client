@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
@@ -58,18 +58,12 @@ function App() {
           <Route path="settings" element={<Settings></Settings>}></Route>
           <Route path="myPortFolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          {/* For test  */}
-          <Route path="allUsers" element={<AllUsers></AllUsers>}></Route>
-          <Route path="manageAllOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
-          <Route path="addAProduct" element={<AddAProduct></AddAProduct>}></Route>
-          <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
-          <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
 
-          {/* <Route path="allUsers" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+          <Route path="allUsers" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
           <Route path="manageAllOrders" element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path="addAProduct" element={<RequireAdmin><AddAProduct></AddAProduct></RequireAdmin>}></Route>
           <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
-          <Route path="manageProducts" element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route> */}
+          <Route path="manageProducts" element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
         </Route>
 
         <Route path="/login" element={<Login></Login>} />

@@ -21,7 +21,7 @@ const MyProfile = () => {
             phone: data.phone,
             linkedInLink: data.linkedInLink,
         }
-        const url = `http://localhost:5000/user/profile/${user.email}`;
+        const url = `https://calm-lake-97858.herokuapp.com/user/profile/${user.email}`;
         // send to your database
         fetch(url, {
             method: 'PUT',
@@ -31,17 +31,29 @@ const MyProfile = () => {
             },
             body: JSON.stringify(userProfile)
         })
-            .then(res => res.json())
-            .then(inserted => {
-                // console.log('userProfile', inserted);
-                if (inserted.insertedId) {
-                    toast.success('Your profile updated successfully');
-                    reset();
-                }
-                else {
-                    toast.error('Failed to update your profile');
-                }
-            })
+        .then(res => {
+            if (res.status === 403) {
+                toast.error('Failed to update your profile');
+            }
+            return res.json()
+        })
+        .then(data => {
+            if (data.modifiedCount > 0) {
+                toast.success(`Your profile updated successfully`);
+            }
+        })
+
+            // .then(res => res.json())
+            // .then(result => {
+            //     console.log('userProfile', result);
+            //     if (result.modifiedCount) {
+            //         toast.success('Your profile updated successfully');
+            //         reset();
+            //     }
+            //     else {
+            //         toast.error('Failed to update your profile');
+            //     }
+            // })
     }
 
     if (isLoading) {

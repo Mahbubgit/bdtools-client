@@ -4,7 +4,7 @@ const usePurchaseDetail = toolId =>{
     const [purchase, setPurchase] =useState({});
 
     useEffect( ()=>{
-        const url = `http://localhost:5000/tool/${toolId}`;
+        const url = `https://calm-lake-97858.herokuapp.com/tool/${toolId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setPurchase(data));

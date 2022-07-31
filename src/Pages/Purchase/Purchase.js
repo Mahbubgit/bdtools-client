@@ -31,7 +31,7 @@ const handlePlaceOrder = event => {
         address: event.target.address.value,
         phone: event.target.phone.value
     }
-    axios.post('http://localhost:5000/order', order)
+    axios.post('https://calm-lake-97858.herokuapp.com/order', order)
         .then(response => {
             // console.log(response);
             const { data } = response;

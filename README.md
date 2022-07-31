@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# BDTOOLS-World's Famous Tools Manufacturer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project Link
+ [BDTOOLS - a reliable tools manufacturer since 1995](https://)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Welcome to BDTOOLS, one of the famous tools manufacturer in the world! This is a website of manufacturing various types of tools for our worldwide clients. Here some features of the website are described bellow:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<ul>
+    <li>
+        Header menu contains Home, Tools, Business Summary, Reviews, Blogs and Login menu.
+    </li>
+    <li>
+        After successful login, you can view 3 more header menu. These are: Dashboard, Sign Out and profileMenuItems where includes logged in user name, Profile, Settings and Sign Out.
+    </li>
+    <li>
+        Home page displays beautiful dynamic sections such as Banner, Tools, Business Summary, Reviews, New produced Tools, Customer Feedback, Contact and Footer.
+    </li>
+    <li>
+        Tools page is related to various types of tools with detail information. Business Summary page shows the summary information of the company. Reviews page shows the valuable review with description from our clients. New Produced Tools is an additional section that displays the tools which are produced first time for our clients. Customer Feedback is also an additional section where described the process of feedback to our valued customers. 
+    </li>
+    <li>
+        Blogs page contains 5 questions and their answers.
+    </li>
+    <li>
+        If a logged in user click on Dashboard, he/she will see My Orders, Add A Review, My Profile and My Portfolio options on the side nav.
+    </li>
+    <li>
+        On My Orders page, the logged-in user will see only their orders. User can cancel any order that is not paid or payment by a credit card.
+    </li>
+    <li>
+        On Add A Review page, the logged-in user can be add a review with ratings.
+    </li>
+    <li>
+        On My Profile page, user can be add their personal information like education, location, phone and linkedIn profile link.
+    </li>
+    <li>
+        Admin user can be see My Profile, Manage All Orders, Add A Product, Make Admin and Manage Products link. He/She performs all tasks on the particular page.
+    </li>
+    <li>
+        User can also login by social login features like google login to access to the website.
+    </li>
+    <li>
+        This site is build using DaisyUI, Firebase Authentication, React Firebase Hooks and MongoDB as database.
+    </li>
+</ul>
