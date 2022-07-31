@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import Products from './Products';
 import DeleteProductsModal from '../Shared/DeleteConfirm/DeleteProductsModal';
 
 const ManageProducts = () => {
@@ -7,7 +6,6 @@ const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
 
     useEffect(() => {
-        // fetch('https://calm-lake-97858.herokuapp.com/tools', {
         fetch('https://calm-lake-97858.herokuapp.com/tools', {
             method: 'GET',
             headers: {
@@ -49,7 +47,7 @@ const ManageProducts = () => {
                                     <td className='text-center'>{tool.availableQuantity}</td>
                                     <td className='text-right'>{tool.price}</td>
                                     <td>
-                                        <img src={tool.img} alt="" />
+                                        <img src={tool.img} alt="" width={75} />
                                     </td>
                                     <td>
                                         < label onClick={() => setDeleteProduct(tool)} className='btn btn-square btn-outline' htmlFor="delete-confirm-modal">
@@ -58,18 +56,7 @@ const ManageProducts = () => {
                                     </td>
                                 </tr>
                             )
-
-                            // tools.map((tool, index) => <Products
-                            //     key={tool._id}
-                            //     index={index}
-                            //     tool={tool}
-                            //     deleteProduct={deleteProduct}
-                            //     setDeleteProduct={setDeleteProduct}
-                            //     setTools={setTools}
-                            // ></Products>)
-
                         }
-
                     </tbody>
                 </table>
                 {deleteProduct && <DeleteProductsModal
@@ -79,12 +66,6 @@ const ManageProducts = () => {
                     setTools={setTools}
                 ></DeleteProductsModal>}
             </div>
-            {/* {deleteProduct && <DeleteProductsModal
-                deleteProduct={deleteProduct}
-                setDeleteProduct={setDeleteProduct}
-                tools={tools}
-                setTools={setTools}
-            ></DeleteProductsModal>} */}
         </div>
     );
 };

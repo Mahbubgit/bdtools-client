@@ -16,7 +16,6 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders';
-import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAdmin from './Pages/Login/RequireAdmin/RequireAdmin';
 import AddAReview from './Pages/Dashboard/AddAReview';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
@@ -59,7 +58,6 @@ function App() {
           <Route path="myPortFolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
 
-          <Route path="allUsers" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
           <Route path="manageAllOrders" element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path="addAProduct" element={<RequireAdmin><AddAProduct></AddAProduct></RequireAdmin>}></Route>
           <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
