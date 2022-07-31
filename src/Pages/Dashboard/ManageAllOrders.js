@@ -7,8 +7,7 @@ const ManageAllOrders = () => {
     const [deleteOrders, setDeleteOrders] = useState(null);
 
     useEffect(() => {
-        // fetch('https://calm-lake-97858.herokuapp.com/orders', {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://calm-lake-97858.herokuapp.com/orders', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +22,7 @@ const ManageAllOrders = () => {
     }, []);
 
     const shippedOrder = (id) => {
-        fetch(`http://localhost:5000/orders/shippedOrder/${id}`, {
+        fetch(`https://calm-lake-97858.herokuapp.com/orders/shippedOrder/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
