@@ -1,11 +1,11 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, setOrders, orders }) => {
-    const { _id, orderItem, orderQuantity } = deleteOrder;
+const DeleteProductsModal = ({ deleteProduct, setDeleteProduct, setTools, tools }) => {
+    const { _id, name, img } = deleteProduct;
 
     const handleDelete = () => {
-        fetch(`https://calm-lake-97858.herokuapp.com/order/${_id}`, {
+        fetch(`http://localhost:5000/tool/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,11 +15,11 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, setOrders, orders }) 
             .then(data => {
                 // console.log(data);
                 if (data.deletedCount) {
-                    toast.success(`Order ${orderItem} with ${orderQuantity} is deleted.`);
-                    setDeleteOrder(null);
+                    toast.success(`Product ${name}  is deleted.`);
+                    setDeleteProduct(null);
                     
-                    const remainingOrder = orders.filter(order => order._id !== _id);
-                    setOrders(remainingOrder);
+                    const remainingProduct = tools.filter(tool => tool._id !== _id);
+                    setTools(remainingProduct);
                 }
             })
     }
@@ -29,7 +29,8 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, setOrders, orders }) 
             <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-red-500">Are you sure to delete order of {orderItem}?</h3>
+                    <img src={img} alt="" width={100} />
+                    <h3 className="font-bold text-lg text-red-500">Are you sure to delete product {name}?</h3>
                     <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error text-white'>Delete</button>
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>
@@ -40,4 +41,4 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, setOrders, orders }) 
     );
 };
 
-export default DeleteConfirmModal;
+export default DeleteProductsModal;
