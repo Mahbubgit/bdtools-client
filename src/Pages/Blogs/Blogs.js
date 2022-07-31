@@ -8,7 +8,7 @@ const Blogs = () => {
                 <div className="collapse-title text-xl font-medium peer-checked:bg-neutral peer-checked:text-white text-left">
                     1. How will you improve the performance of a React Application?
                 </div>
-                <div className="collapse-content peer-checked:bg-neutral peer-checked:text-white text-left">
+                <div className="collapse-content peer-checked:bg-accent peer-checked:text-white text-left m-2 p-1">
                     <li>
                         Using Immutable Data Structures.
                     </li>
@@ -79,7 +79,7 @@ const Blogs = () => {
                 <div className="collapse-title text-xl font-medium peer-checked:bg-neutral peer-checked:text-white text-left">
                     2. What are the different ways to manage a state in a React application?
                 </div>
-                <div className="collapse-content peer-checked:bg-neutral peer-checked:text-white text-left">
+                <div className="collapse-content peer-checked:bg-accent peer-checked:text-white text-left m-2 p-1">
                     <p>
                         There are several ways to manage states in React, including the use of:
                         <br />
@@ -95,7 +95,7 @@ const Blogs = () => {
                 <div className="collapse-title text-xl font-medium peer-checked:bg-neutral peer-checked:text-white text-left">
                     3. How does prototypical inheritance work?
                 </div>
-                <div className="collapse-content peer-checked:bg-neutral peer-checked:text-white text-left">
+                <div className="collapse-content peer-checked:bg-accent peer-checked:text-white text-left m-2 p-1">
                     <p>
                         Prototypal Inheritance: The Prototypal Inheritance is a feature in JavaScript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object. <br />
                         When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype.
@@ -108,7 +108,7 @@ const Blogs = () => {
                 <div className="collapse-title text-xl font-medium peer-checked:bg-neutral peer-checked:text-white text-left">
                     4. Why you do not set the state directly in React. For example, if you have `const [products, setProducts] = useState([])`. Why you do not set `products = [...]` instead, you use the `setProducts`?
                 </div>
-                <div className="collapse-content peer-checked:bg-neutral peer-checked:text-white text-left">
+                <div className="collapse-content peer-checked:bg-accent peer-checked:text-white text-left m-2 p-1">
                     <p>
                         We should never update the state directly because of the following reasons: <br />
 
@@ -124,7 +124,7 @@ const Blogs = () => {
                 <div className="collapse-title text-xl font-medium peer-checked:bg-neutral peer-checked:text-white text-left">
                     5. What is a unit test? Why should write unit tests?
                 </div>
-                <div className="collapse-content peer-checked:bg-neutral peer-checked:text-white text-left">
+                <div className="collapse-content peer-checked:bg-accent peer-checked:text-white text-left m-2 p-1">
                     <p>
                         Unit Testing is a type of software testing where individual units or components of a software are tested. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object. <br />
 

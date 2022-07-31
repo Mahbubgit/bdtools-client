@@ -72,7 +72,7 @@ const Register = () => {
                             <img className='mr-12' style={{ width: "30px", height: "30px" }} src={googleImg} alt="" />
                             Continue with Google
                         </button>
-                        <div className="divider">OR</div>
+                        <div className="divider mb-0">OR</div>
 
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full max-w-xs">
@@ -154,7 +154,7 @@ const Register = () => {
                                 <input
                                     type="password"
                                     placeholder="Confirm Password"
-                                    className="input input-bordered w-full max-w-xs"
+                                    className="input input-bordered w-full max-w-xs mb-3"
                                     {...register("confirmPassword", {
                                         required: {
                                             value: true,
@@ -176,7 +176,7 @@ const Register = () => {
                             {confirmPasswordError}
                             <input className='btn w-full max-w-xs' type="submit" value="Register" />
                         </form>
-                        <p>Already have an account? <Link to="/login" className='text-primary'>Please Login</Link></p>
+                        <p className='mb-4'>Already have an account? <Link to="/login" className='text-primary'>Please Login</Link></p>
                     </div>
                 </div>
             </div>

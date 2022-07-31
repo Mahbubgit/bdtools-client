@@ -71,7 +71,7 @@ const Login = () => {
                         Continue with Google
 
                     </button>
-                    <div className="divider">OR</div>
+                    <div className="divider mb-0">OR</div>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -127,10 +127,10 @@ const Login = () => {
                         </div>
 
                         {signInError}
-                        <button className='btn btn-link text-primary justify-start capitalize font-bold' onClick={resetPassword}>Forgot Password?</button>
+                        {/* <button className='btn btn-link text-primary justify-start capitalize font-bold' onClick={resetPassword}>Forgot Password?</button> */}
                         <input className='btn w-full max-w-xs' type="submit" value="Login" />
                     </form>
-                    <p>New to <span className='text-primary font-bold text-2xl'>B</span><span className='text-secondary font-bold text-2xl'>D</span><span className='text-accent font-bold text-sm'>TOOLS</span>? <Link to="/register" className='text-primary'>Create New Account</Link></p>
+                    <p className='mb-4'>New to <span className='text-primary font-bold text-2xl'>B</span><span className='text-secondary font-bold text-2xl'>D</span><span className='text-accent font-bold text-sm'>TOOLS</span>? <Link to="/register" className='text-primary'>Create New Account</Link></p>
 
                 </div>
             </div>
