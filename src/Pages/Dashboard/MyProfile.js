@@ -11,9 +11,7 @@ const MyProfile = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const onSubmit = async data => {
-        // console.log('data', data);
-
-        const userProfile = {
+            const userProfile = {
             name: data.name,
             email: data.email,
             education: data.education,
@@ -21,39 +19,28 @@ const MyProfile = () => {
             phone: data.phone,
             linkedInLink: data.linkedInLink,
         }
-        const url = `https://calm-lake-97858.herokuapp.com/user/profile/${user.email}`;
-        // send to your database
-        fetch(url, {
+
+        fetch(`https://calm-lake-97858.herokuapp.com/user/profile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(userProfile)
         })
-        .then(res => {
-            if (res.status === 403) {
-                toast.error('Failed to update your profile');
-            }
-            return res.json()
-        })
-        .then(data => {
-            if (data.modifiedCount > 0) {
-                toast.success(`Your profile updated successfully`);
-            }
-        })
-
-            // .then(res => res.json())
-            // .then(result => {
-            //     console.log('userProfile', result);
-            //     if (result.modifiedCount) {
-            //         toast.success('Your profile updated successfully');
-            //         reset();
-            //     }
-            //     else {
-            //         toast.error('Failed to update your profile');
-            //     }
-            // })
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Failed to update your profile');
+                }
+                return res.json()
+            })
+            .then(data => {
+                console.log(data);
+                if (data.result.modifiedCount > 0) {
+                    toast.success(`Your profile updated successfully`);
+                    reset();
+                }
+            })
     }
 
     if (isLoading) {
@@ -62,7 +49,6 @@ const MyProfile = () => {
 
     return (
         <div>
-            {/* <h2 className='text-4xl text-primary font-bold'>My Profile</h2> */}
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-control mx-auto w-full max-w-xs">

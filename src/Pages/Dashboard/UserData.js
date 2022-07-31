@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const UserData = ({ user, setUsers, index }) => {
+const UserData = ({ user, index }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
