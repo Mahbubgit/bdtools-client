@@ -5,7 +5,7 @@ const DeleteProductsModal = ({ deleteProduct, setDeleteProduct, setTools, tools 
     const { _id, name, img } = deleteProduct;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/tool/${_id}`, {
+        fetch(`https://calm-lake-97858.herokuapp.com/tool/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
