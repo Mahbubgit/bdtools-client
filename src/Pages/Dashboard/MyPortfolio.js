@@ -3,34 +3,51 @@ import photo from '../../Images/Picture.jpg';
 
 const MyPortfolio = () => {
     return (
-
-
         <div>
-            <h1 className="text-5xl font-bold">My Portfolio</h1>
-
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={photo} className="max-w-sm rounded-lg shadow-2xl" alt='' />
+                    <img src={photo} className="max-w-sm rounded-lg shadow-2xl" alt='' width={200} />
                     <div>
                         <div className="card lg:max-w-lg bg-base-100 shadow-xl">
                             <div className="card-body items-center text-center">
-                                <p className='text-5xl text-neutral font-bold'>Name: S.M. Mahbubur Rahman</p>
-                                <p className='text-5xl text-neutral font-bold'>Email: bitu_rajshahi@yahoo.com/mrahman942@gmail.com</p>
-                                <p className='text-5xl text-neutral font-bold'>Educational Background: B.Sc. in Physics</p>
-                                <p className='text-5xl text-neutral font-bold'>Skills in Web Developer: HTML 5, CSS 3, JavaScript, Bootstrap, React-Bootstrap, React Router, Firebase Authentication, React Firebase Hooks, Tailwind CSS, daisyUI — Tailwind CSS Components, MongoDB Atlas</p>
-                                <p className='text-5xl text-neutral font-bold'>Three(3) Projects Link:
-                                    <ul>
-                                        <li>
-                                            https://bdmotors-aeadc.web.app
-                                        </li>
-                                        <li>
-                                            doctors-appointment-bc374.firebaseapp.com
-                                        </li>
-                                        <li>
-                                            https://sweet-t-shirt-mania.netlify.app
-                                        </li>
-                                    </ul>
-                                </p>
+                                <table className='text-xl text-neutral font-bold text-left'>
+                                    <tr>
+                                        <td>
+                                            Name: <br /> <span className='text-primary '>S.M. Mahbubur Rahman</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Email: <br /><span className='text-primary'>bitu_rajshahi@yahoo.com, mrahman942@gmail.com</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Educational Background: <br /><span className='text-primary'>B.Sc. in Physics</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Skills in Web Developer: <br />
+                                            <span className='text-primary justify-center'>HTML 5, CSS 3, JavaScript, Bootstrap, React-Bootstrap, React Router, Firebase Authentication, React Firebase Hooks, Tailwind CSS, daisyUI — Tailwind CSS Components, MongoDB Atlas
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Three(3) Projects Link: <br />
+                                            <a href="https://bdmotors-aeadc.web.app" target="_blank" rel="noreferrer">
+                                                <span className='text-primary'>1. BDMOTORS</span>
+                                            </a> <br />
+                                            <a href="https://doctors-appointment-bc374.firebaseapp.com" target="_blank" rel="noreferrer">
+                                                <span className='text-primary'>2. Doctor's Appointment</span>
+                                            </a> <br />
+                                            <a href="https://sweet-t-shirt-mania.netlify.app" target="_blank" rel="noreferrer">
+                                                <span className='text-primary'>3. T-Shirt Mania</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
