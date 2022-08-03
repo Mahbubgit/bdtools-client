@@ -12,7 +12,7 @@ Welcome to BDTOOLS, one of the famous tools manufacturer in the world! This is a
         Header menu contains Home, Tools, Business Summary, Reviews, Blogs and Login menu.
     </li>
     <li>
-        After successful login, you can view 3 more header menu. These are: Dashboard, Sign Out and Profile Image where includes logged in user name, Profile, Settings and Sign Out.
+        After successful login, you can view 3 more header menu. These are: Dashboard, Sign Out and Profile Image where includes logged in user name, Profile and Sign Out.
     </li>
     <li>
         Home page displays beautiful dynamic sections such as Banner, Tools, Business Summary, Reviews, New produced Tools, Customer Feedback, Contact and Footer.

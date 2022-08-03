@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import usePurchaseDetail from '../../hooks/usePurchaseDetail';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -15,6 +15,7 @@ const Purchase = () => {
     const { toolId } = useParams();
     const [purchase, isLoading] = usePurchaseDetail(toolId);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     if (isLoading) {
         return <Loading></Loading>
@@ -29,7 +30,8 @@ const handlePlaceOrder = event => {
         orderPrice: event.target.orderPrice.value,
         email: user.email,
         address: event.target.address.value,
-        phone: event.target.phone.value
+        phone: event.target.phone.value,
+        img: purchase.img
     }
     axios.post('https://calm-lake-97858.herokuapp.com/order', order)
         .then(response => {
@@ -38,6 +40,7 @@ const handlePlaceOrder = event => {
             if (data.insertedId) {
                 toast('Your order is completed !!');
                 event.target.reset();
+                navigate('/dashboard/myOrders');
             }
         })
 }
@@ -153,7 +156,7 @@ return (
                                 <textarea className="textarea w-100 mb-2 input input-bordered" type="text" name="address" placeholder='Address' required autoComplete='off'></textarea>
                             </div>
                             <div className="form-control">
-                                <input className='w-100 mb-2 input input-bordered' type="text" name="phone" placeholder='Phone' required />
+                                <input className='w-100 mb-2 input input-bordered' type="text" name="phone" maxLength={11} placeholder='Phone' required />
                             </div>
                             <div className="form-control">
                                 <label className="input-group">

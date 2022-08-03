@@ -7,8 +7,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
 
 const stripePromise = loadStripe('pk_test_51LIFnbHZwCB43McyiuTRF7CGtPhnV0gJwbIM8hgif6xJfQYQYC4kuy2XE62MhiaMRwY1B9tqkiwma1c1uw2qE3H500e53tE6vf');
-// const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
-
 
 const Payment = () => {
     const { id } = useParams();
@@ -38,7 +36,7 @@ const Payment = () => {
                         Address: {paymentOrder.address} <br />
                         Phone: {paymentOrder.phone}
                     </p>
-                    <Link to={'/dashboard/myOrders'} className='btn btn-primary'>Cancel</Link>
+                    <Link to={'/dashboard/myOrders'} className='btn btn-secondary'>Cancel</Link>
                 </div>
             </div>
             <div className="mx-auto card w-50 max-w-md shadow-2xl bg-base-200">

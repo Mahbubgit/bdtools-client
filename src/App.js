@@ -22,7 +22,6 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import AddAProduct from './Pages/Dashboard/AddAProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
-import Settings from './Pages/Dashboard/Settings';
 import MyPortfolio from './Pages/Dashboard/MyPortfolio';
 import Payment from './Pages/Dashboard/Payment';
 import Purchase from './Pages/Purchase/Purchase';
@@ -54,7 +53,6 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
           <Route path="addAReview" element={<AddAReview></AddAReview>}></Route>
-          <Route path="settings" element={<Settings></Settings>}></Route>
           <Route path="myPortFolio" element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
 

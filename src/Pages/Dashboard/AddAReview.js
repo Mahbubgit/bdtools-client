@@ -28,7 +28,7 @@ const AddAReview = () => {
             .then(result => {
                 if (result.success) {
                     const img = result.data.url;
-                    console.log(data.rating);
+                    // console.log(data.rating);
                     const review = {
                         name: data.name,
                         rating: data.rating,

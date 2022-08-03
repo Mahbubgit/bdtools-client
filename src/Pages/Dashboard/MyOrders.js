@@ -68,9 +68,10 @@ const MyOrders = () => {
                                         <td>{a.address}</td>
                                         <td>{a.phone}</td>
                                         <td>{a.orderItem}</td>
-                                        <td>{a.img}</td>
-                                        <td>{a.orderQuantity}</td>
-                                        <td>{a.orderPrice}</td>
+                                        {/* <td>{a.img}</td> */}
+                                        <img src={a.img} alt="" width={100} />
+                                        <td className='text-center'>{a.orderQuantity}</td>
+                                        <td className='text-right'>{a.orderPrice}</td>
                                         <td>
                                             {(a.orderPrice && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-primary text-white h-6 w-20'>Pay Now</button></Link>}
                                             {(a.orderPrice && a.paid) && <div>

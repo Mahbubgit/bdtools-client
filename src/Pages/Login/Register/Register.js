@@ -49,7 +49,7 @@ const Register = () => {
         if (data.password === data.confirmPassword) {
             await createUserWithEmailAndPassword(data.email, data.password);
             await updateProfile({ displayName: data.name });
-            console.log('Update Done', data);
+            // console.log('Update Done', data);
         }
         else {
             signUpError = <p className='text-center text-red-500'>Confirm password must be same as password</p>

@@ -73,7 +73,6 @@ const Header = () => {
         <li>
             <Link className="justify-between" to="/dashboard">Profile <span className="badge">New</span></Link>
         </li>
-        <li><Link to="/dashboard/settings">Settings</Link></li>
         <li><Link className='text-red-600 font-bold' onClick={logout} to="/login">Sign Out</Link></li>
     </>
 

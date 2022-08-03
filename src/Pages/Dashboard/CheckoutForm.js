@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import auth from '../../firebase.init';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import { async } from '@firebase/util';
-// import { success } from 'daisyui/src/colors';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { async } from '@firebase/util';
+import { success } from 'daisyui/src/colors';
 
 const CheckoutForm = ({ paymentOrder }) => {
     const stripe = useStripe();
     const elements = useElements();
-    // const {user} = useAuthState();
-    // const [user] = useAuthState(auth);
-    // console.log(user.name);
+    const [user] = useAuthState(auth);
 
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('');
@@ -37,6 +34,7 @@ const CheckoutForm = ({ paymentOrder }) => {
                 }
             });
     }, [orderPrice])
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -65,11 +63,14 @@ const CheckoutForm = ({ paymentOrder }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
+                        name: user.name,
                         email: email
                     },
                 },
             },
         );
+        // console.log(clientSecret);
+        
         if (intentError) {
             setCardError(intentError?.message);
             setProcessing(false);
@@ -77,7 +78,7 @@ const CheckoutForm = ({ paymentOrder }) => {
         else {
             setCardError('');
             setTransactionId(paymentIntent.id);
-            console.log(paymentIntent);
+            // console.log(paymentIntent);
             setSuccess('Congrats! Your payment is completed.')
             // store payment on database
             const payment = {
@@ -95,7 +96,7 @@ const CheckoutForm = ({ paymentOrder }) => {
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false);
-                    console.log(data);
+                    // console.log(data);
                 })
         }
     }

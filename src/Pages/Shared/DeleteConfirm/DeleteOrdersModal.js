@@ -31,7 +31,7 @@ const DeleteOrdersModal = ({ deleteOrders, setDeleteOrders, setOrders, orders })
                 <div className="modal-box">
                     <h3 className="font-bold text-lg text-red-500">Are you sure to delete order of {orderItem} create by {email}?</h3>
                     <div className="modal-action">
-                        <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-error bg-red-600 text-white'>Delete</button>
+                        <button onClick={() => handleDelete(_id)} className='btn btn-xs btn-secondary text-white'>Delete</button>
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
